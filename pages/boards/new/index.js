@@ -16,11 +16,12 @@ import {
   Youtube,
   ImageWrapper,
   ImageUpload,
-  MainSet,
-  MainSetFlex,
-  MainSetInput,
+  MainSetWrapper,
+  RadioButton,
+  RadioLabel,
+  ButtonWrapper,
   RegButton,
-} from "../styles/emotion";
+} from "../../../styles/emotion";
 
 export default function ResisterPage() {
   // 자바스크립트 쓰는 곳
@@ -65,20 +66,16 @@ export default function ResisterPage() {
         <ImageUpload>+</ImageUpload>
         <ImageUpload>+</ImageUpload>
       </ImageWrapper>
-      <MainSet>
+      <MainSetWrapper>
         <Label>메인 설정</Label>
-        <MainSetFlex>
-          <MainSetFlex>
-            <MainSetInput type="checkbox" id="main" />
-            <label>유튜브</label>
-          </MainSetFlex>
-          <MainSetFlex>
-            <MainSetInput type="checkbox" id="main" />
-            <label>사진</label>
-          </MainSetFlex>
-        </MainSetFlex>
-      </MainSet>
-      <RegButton>등록하기</RegButton>
+        <RadioButton type="radio" id="youtube" name="radio-button" />
+        <RadioLabel htmlFor="youtube">유튜브</RadioLabel>
+        <RadioButton type="radio" id="image" name="radio-button" />
+        <RadioLabel htmlFor="image">사진</RadioLabel>
+      </MainSetWrapper>
+      <ButtonWrapper>
+        <RegButton>등록하기</RegButton>
+      </ButtonWrapper>
     </Wrapper>
   );
 }
