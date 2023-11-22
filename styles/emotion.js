@@ -52,7 +52,7 @@ export const Password = styled.input`
   border: 1px solid #bdbdbd;
 `;
 
-export const Subject = styled.div`
+export const Subject = styled.input`
   width: 996px;
   height: 52px;
   padding-left: 16px;
