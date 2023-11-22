@@ -153,3 +153,9 @@ export const RegButton = styled.button`
   margin-bottom: 50px;
   cursor: pointer;
 `;
+
+export const Error = styled.div`
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+`;

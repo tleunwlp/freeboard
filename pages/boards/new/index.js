@@ -22,6 +22,7 @@ import {
   RadioLabel,
   ButtonWrapper,
   RegButton,
+  Error,
 } from "../../../styles/emotion";
 
 export default function ResisterPage() {
@@ -94,16 +95,16 @@ export default function ResisterPage() {
             placeholder="이름을 적어주세요."
             onChange={onChangeName}
           />
-          <div>{nameError}</div>
+          <Error>{nameError}</Error>
         </InputWrapper>
         <InputWrapper>
           <Label>비밀번호</Label>
           <Password
-            type="text"
+            type="password"
             placeholder="비밀번호를 입력해주세요."
             onChange={onChangePassword}
           />
-          <div>{passwordError}</div>
+          <Error>{passwordError}</Error>
         </InputWrapper>
       </Wrapper_info>
       <InputWrapper>
@@ -113,7 +114,7 @@ export default function ResisterPage() {
           placeholder="제목을 작성해주세요."
           onChange={onChangeTitle}
         />
-        <div>{titleError}</div>
+        <Error>{titleError}</Error>
       </InputWrapper>
       <InputWrapper>
         <Label>내용</Label>
@@ -121,7 +122,7 @@ export default function ResisterPage() {
           placeholder="내용을 작성해주세요."
           onChange={onChangeContent}
         />
-        <div>{contentError}</div>
+        <Error>{contentError}</Error>
       </InputWrapper>
       <InputWrapper>
         <Label>주소</Label>
