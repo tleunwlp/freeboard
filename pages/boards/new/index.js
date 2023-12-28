@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
+import { useMutation, gql } from "@apollo/client";
 import {
   Wrapper,
   Title,
@@ -25,6 +26,17 @@ import {
   Error,
 } from "../../../styles/emotion";
 
+const CREATE_BOARD = gql`
+  mutation createBoard($createBoardInput: CreateBoardInput!) {
+    createBoard(createBoardInput: $createBoardInput) {
+      _id
+      writer
+      title
+      contents
+    }
+  }
+`;
+
 export default function ResisterPage() {
   // 자바스크립트 쓰는 곳
 
@@ -37,6 +49,8 @@ export default function ResisterPage() {
   const [passwordError, setPasswordError] = useState("");
   const [titleError, setTitleError] = useState("");
   const [contentError, setContentError] = useState("");
+
+  const [createBoard] = useMutation(CREATE_BOARD);
 
   function onChangeName(event) {
     setName(event.target.value);
@@ -66,7 +80,7 @@ export default function ResisterPage() {
     }
   }
 
-  function onClickResister() {
+  const onClickResister = async () => {
     if (name === "") {
       setNameError("이름을 작성해주세요.");
     }
@@ -80,9 +94,19 @@ export default function ResisterPage() {
       setContentError("내용을 입력해주세요.");
     }
     if (name && password && title && content) {
-      alert("등록되었습니다.");
+      const result = await createBoard({
+        variables: {
+          createBoardInput: {
+            writer: name,
+            password: password,
+            title: title,
+            contents: content,
+          },
+        },
+      });
+      console.log(result);
     }
-  }
+  };
 
   return (
     <Wrapper>
