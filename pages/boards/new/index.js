@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { useMutation, gql } from "@apollo/client";
+import { useRouter } from "next/router";
 import {
   Wrapper,
   Title,
@@ -25,20 +26,20 @@ import {
   RegButton,
   Error,
 } from "../../../styles/emotion";
+import { Router } from "next/router";
 
 const CREATE_BOARD = gql`
   mutation createBoard($createBoardInput: CreateBoardInput!) {
     createBoard(createBoardInput: $createBoardInput) {
       _id
-      writer
-      title
-      contents
     }
   }
 `;
 
 export default function ResisterPage() {
   // 자바스크립트 쓰는 곳
+
+  const router = useRouter();
 
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -94,17 +95,23 @@ export default function ResisterPage() {
       setContentError("내용을 입력해주세요.");
     }
     if (name && password && title && content) {
-      const result = await createBoard({
-        variables: {
-          createBoardInput: {
-            writer: name,
-            password: password,
-            title: title,
-            contents: content,
+      try {
+        const result = await createBoard({
+          variables: {
+            createBoardInput: {
+              writer: name,
+              password: password,
+              title: title,
+              contents: content,
+            },
           },
-        },
-      });
-      console.log(result);
+        });
+        console.log(result);
+        // router.push("/boards/new-moved");
+        router.push(`/boards/new-moved/${result.data.createBoard._id}`);
+      } catch (error) {
+        alert(error.message);
+      }
     }
   };
 
