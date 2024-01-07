@@ -10,18 +10,18 @@ export default function BoardWriteUI(props) {
           <S.Writer
             type="text"
             placeholder="이름을 적어주세요."
-            onChange={props.aaa}
+            onChange={props.onChangeName}
           />
-          <S.Error>{props.a}</S.Error>
+          <S.Error>{props.nameError}</S.Error>
         </S.InputWrapper>
         <S.InputWrapper>
           <S.Label>비밀번호</S.Label>
           <S.Password
             type="password"
             placeholder="비밀번호를 입력해주세요."
-            onChange={props.bbb}
+            onChange={props.onChangePassword}
           />
-          <S.Error>{props.b}</S.Error>
+          <S.Error>{props.passwordError}</S.Error>
         </S.InputWrapper>
       </S.Wrapper_info>
       <S.InputWrapper>
@@ -29,14 +29,17 @@ export default function BoardWriteUI(props) {
         <S.Subject
           type="text"
           placeholder="제목을 작성해주세요."
-          onChange={props.ccc}
+          onChange={props.onChangeTitle}
         />
-        <S.Error>{props.c}</S.Error>
+        <S.Error>{props.titleError}</S.Error>
       </S.InputWrapper>
       <S.InputWrapper>
         <S.Label>내용</S.Label>
-        <S.Contents placeholder="내용을 작성해주세요." onChange={props.ddd} />
-        <S.Error>{props.d}</S.Error>
+        <S.Contents
+          placeholder="내용을 작성해주세요."
+          onChange={props.onChangeContent}
+        />
+        <S.Error>{props.contentError}</S.Error>
       </S.InputWrapper>
       <S.InputWrapper>
         <S.Label>주소</S.Label>
@@ -65,7 +68,7 @@ export default function BoardWriteUI(props) {
         <S.RadioLabel htmlFor="image">사진</S.RadioLabel>
       </S.MainSetWrapper>
       <S.ButtonWrapper>
-        <S.RegButton onClick={props.eee}>등록하기</S.RegButton>
+        <S.RegButton onClick={props.onClickResister}>등록하기</S.RegButton>
       </S.ButtonWrapper>
     </S.Wrapper>
   );

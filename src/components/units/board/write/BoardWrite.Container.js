@@ -83,15 +83,15 @@ export default function BoardWrite() {
 
   return (
     <BoardWriteUI
-      aaa={onChangeName}
-      bbb={onChangePassword}
-      ccc={onChangeTitle}
-      ddd={onChangeContent}
-      eee={onClickResister}
-      a={nameError}
-      b={passwordError}
-      c={titleError}
-      d={contentError}
+      onChangeName={onChangeName}
+      onChangePassword={onChangePassword}
+      onChangeTitle={onChangeTitle}
+      onChangeContent={onChangeContent}
+      onClickResister={onClickResister}
+      nameError={nameError}
+      passwordError={passwordError}
+      titleError={titleError}
+      contentError={contentError}
     />
   );
 }
