@@ -7,6 +7,8 @@ import { CREATE_BOARD } from "./BoardWrite.queries";
 export default function BoardWrite() {
   const router = useRouter();
 
+  const [isActive, setIsActive] = useState(false);
+
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [title, setTitle] = useState("");
@@ -24,12 +26,22 @@ export default function BoardWrite() {
     if (event.target.value !== "") {
       setNameError("");
     }
+    if (event.target.value && password && title && content) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
   }
 
   function onChangePassword(event) {
     setPassword(event.target.value);
     if (event.target.value !== "") {
       setPasswordError("");
+    }
+    if (name && event.target.value && title && content) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
     }
   }
 
@@ -38,12 +50,22 @@ export default function BoardWrite() {
     if (event.target.value !== "") {
       setTitleError("");
     }
+    if (name && password && event.target.value && content) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
   }
 
   function onChangeContent(event) {
     setContent(event.target.value);
     if (event.target.value !== "") {
       setContentError("");
+    }
+    if (name && password && title && event.target.value) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
     }
   }
 
@@ -92,6 +114,7 @@ export default function BoardWrite() {
       passwordError={passwordError}
       titleError={titleError}
       contentError={contentError}
+      isActive={isActive}
     />
   );
 }

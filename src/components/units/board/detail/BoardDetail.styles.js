@@ -1,10 +1,20 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
+  width: 1200px;
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 1200px;
+  height: 1000px;
   margin: 100px;
   padding-top: 80px;
   padding-bottom: 100px;
@@ -17,6 +27,7 @@ export const Wrapper = styled.div`
 export const Title = styled.div`
   font-size: 36px;
   font-weight: bold;
+  margin-bottom: 100px;
 `;
 
 export const Label = styled.div`
@@ -55,11 +66,12 @@ export const Logo = styled.img`
 
 export const DetailPageWrapper = styled.div`
   width: 996px;
+  height: 700px;
   padding: 10px;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: start;
 `;
 
@@ -94,4 +106,24 @@ export const ThumbLikeDown = styled.div`
   color: #828282;
   font-size: 18px;
   font-weight: 400;
+`;
+
+export const BottomWrapper = styled.div`
+  width: 600px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const BottomBtn = styled.button`
+  width: 179px;
+  height: 45px;
+  border: 1px solid #bdbdbd;
+  background-color: #ffffff;
+  padding: 14px 60px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
 `;
