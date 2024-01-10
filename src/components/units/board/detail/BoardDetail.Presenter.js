@@ -29,7 +29,7 @@ export default function BoardDetailUI(props) {
         </S.ThumbImageWrapper>
       </S.PageWrapper>
       <S.BottomWrapper>
-        <S.BottomBtn>목록으로</S.BottomBtn>
+        <S.BottomBtn onClick={props.onClickList}>목록으로</S.BottomBtn>
         <S.BottomBtn>수정하기</S.BottomBtn>
         <S.BottomBtn onClick={props.onClickDelete}>삭제하기</S.BottomBtn>
       </S.BottomWrapper>

@@ -21,11 +21,19 @@ export default function BoardDetail() {
     }
   };
 
+  const onClickList = () => {};
+
   const { data } = useQuery(FETCH_BOARD, {
     variables: {
       ID: router.query.id,
     },
   });
 
-  return <BoardDetailUI data={data} onClickDelete={onClickDelete} />;
+  return (
+    <BoardDetailUI
+      data={data}
+      onClickDelete={onClickDelete}
+      onClickList={onClickList}
+    />
+  );
 }
