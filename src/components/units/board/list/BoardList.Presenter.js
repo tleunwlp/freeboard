@@ -11,22 +11,34 @@ export default function BoardListUI(props) {
         <S.DateInput type="text" placeholder="YYYY.MM.DD ~ YYYY.MM.DD" />
         <S.SearchBtn>검색하기</S.SearchBtn>
       </S.SearchWrapper>
-      <div>
-        <div>
-          <span>아이디</span>
-          <span>제목</span>
-          <span>작성자</span>
-          <span>날짜</span>
-        </div>
+      <S.ListWrapper>
+        <S.CategoryWrapper>
+          <S.CategoryName>아이디</S.CategoryName>
+          <S.CategoryName>제목</S.CategoryName>
+          <S.CategoryName>작성자</S.CategoryName>
+          <S.CategoryName>날짜</S.CategoryName>
+        </S.CategoryWrapper>
         {props.data?.fetchBoards.map((el) => (
-          <div key={el._id}>
-            <span>{el._id}</span>
-            <span>{el.title}</span>
-            <span>{el.writer}</span>
-            <span>{el.createdAt}</span>
-          </div>
+          <S.CategoryWrapper key={el._id}>
+            <S.CategoryInfoTxt>{el._id}</S.CategoryInfoTxt>
+            <S.CategoryInfoTxt>{el.title}</S.CategoryInfoTxt>
+            <S.CategoryInfoTxt>{el.writer}</S.CategoryInfoTxt>
+            <S.CategoryInfoTxt>{el.createdAt}</S.CategoryInfoTxt>
+          </S.CategoryWrapper>
         ))}
-      </div>
+      </S.ListWrapper>
+      <S.Footer>
+        <S.BtnWrapper>
+          <S.PageBtn>&lt;</S.PageBtn>
+          <S.PageBtn>1</S.PageBtn>
+          <S.PageBtn>2</S.PageBtn>
+          <S.PageBtn>&gt;</S.PageBtn>
+        </S.BtnWrapper>
+        <S.ResisterBtnWrapper>
+          <S.RegisterImg src="/images/register.png" />
+          <S.ResisterBtn>게시물 등록하기</S.ResisterBtn>
+        </S.ResisterBtnWrapper>
+      </S.Footer>
     </S.Wrapper>
   );
 }
