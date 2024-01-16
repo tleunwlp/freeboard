@@ -1,4 +1,5 @@
 import * as S from "./BoardList.styles";
+import { getDate } from "../../../commons/libraries/utils";
 
 export default function BoardListUI(props) {
   return (
@@ -20,10 +21,14 @@ export default function BoardListUI(props) {
         </S.CategoryWrapper>
         {props.data?.fetchBoards.map((el) => (
           <S.CategoryWrapper key={el._id}>
-            <S.CategoryInfoTxt>{el._id}</S.CategoryInfoTxt>
-            <S.CategoryInfoTxt>{el.title}</S.CategoryInfoTxt>
+            <S.CategoryInfoTxt>
+              {String(el._id).slice(-4).toUpperCase()}
+            </S.CategoryInfoTxt>
+            <S.CategoryInfoTxt id={el._id} onClick={props.onClickMoveToDetail}>
+              {el.title}
+            </S.CategoryInfoTxt>
             <S.CategoryInfoTxt>{el.writer}</S.CategoryInfoTxt>
-            <S.CategoryInfoTxt>{el.createdAt}</S.CategoryInfoTxt>
+            <S.CategoryInfoTxt>{getDate(el.createdAt)}</S.CategoryInfoTxt>
           </S.CategoryWrapper>
         ))}
       </S.ListWrapper>
@@ -36,7 +41,9 @@ export default function BoardListUI(props) {
         </S.BtnWrapper>
         <S.ResisterBtnWrapper>
           <S.RegisterImg src="/images/register.png" />
-          <S.ResisterBtn>게시물 등록하기</S.ResisterBtn>
+          <S.ResisterBtn onClick={props.onClickMoveToResister}>
+            게시물 등록하기
+          </S.ResisterBtn>
         </S.ResisterBtnWrapper>
       </S.Footer>
     </S.Wrapper>
