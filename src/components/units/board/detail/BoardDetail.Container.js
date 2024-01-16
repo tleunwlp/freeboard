@@ -21,7 +21,9 @@ export default function BoardDetail() {
     }
   };
 
-  const onClickList = () => {};
+  const onClickList = () => {
+    router.push(`/boards`);
+  };
 
   const { data } = useQuery(FETCH_BOARD, {
     variables: {
