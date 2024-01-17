@@ -25,6 +25,10 @@ export default function BoardDetail() {
     router.push(`/boards`);
   };
 
+  const onClickEdit = () => {
+    router.push(`/boards/new-moved/${router.query.id}/edit`);
+  };
+
   const { data } = useQuery(FETCH_BOARD, {
     variables: {
       ID: router.query.id,
@@ -36,6 +40,7 @@ export default function BoardDetail() {
       data={data}
       onClickDelete={onClickDelete}
       onClickList={onClickList}
+      onClickEdit={onClickEdit}
     />
   );
 }
