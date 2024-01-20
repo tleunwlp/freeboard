@@ -105,18 +105,28 @@ export default function BoardWrite(props) {
   };
 
   const onClickEdit = async () => {
+    if (!title && !content) {
+      alert("수정된 내용이 없습니다.");
+      return;
+    }
+    if (!password) {
+      alert("비밀번호를 입력해주세요.");
+      return;
+    }
+
+    const updateBoardInput = {};
+    if (title) updateBoardInput.title = title;
+    if (content) updateBoardInput.content = content;
     try {
       const result = await updateBoard({
         variables: {
-          updateBoardInput: {
-            title: title,
-            contents: content,
-          },
+          updateBoardInput,
           password: password,
           boardId: router.query.id,
         },
       });
-      router.push(`/boards/new-moved/${result?.data?.updateBoard?._id}`);
+      console.log("업데이트 완료 !!");
+      router.push(`/boards/new-moved/${result.data?.updateBoard?._id}`);
     } catch (error) {
       alert(error.message);
     }
@@ -136,6 +146,7 @@ export default function BoardWrite(props) {
       contentError={contentError}
       isActive={isActive}
       isEdit={props.isEdit}
+      data={props.data}
     />
   );
 }

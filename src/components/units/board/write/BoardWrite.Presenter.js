@@ -11,6 +11,7 @@ export default function BoardWriteUI(props) {
             type="text"
             placeholder="이름을 적어주세요."
             onChange={props.onChangeName}
+            defaultValue={props.data?.fetchBoard?.writer}
           />
           <S.Error>{props.nameError}</S.Error>
         </S.InputWrapper>
@@ -30,6 +31,7 @@ export default function BoardWriteUI(props) {
           type="text"
           placeholder="제목을 작성해주세요."
           onChange={props.onChangeTitle}
+          defaultValue={props.data?.fetchBoard?.title}
         />
         <S.Error>{props.titleError}</S.Error>
       </S.InputWrapper>
@@ -38,6 +40,7 @@ export default function BoardWriteUI(props) {
         <S.Contents
           placeholder="내용을 작성해주세요."
           onChange={props.onChangeContent}
+          defaultValue={props.data?.fetchBoard?.contents}
         />
         <S.Error>{props.contentError}</S.Error>
       </S.InputWrapper>
