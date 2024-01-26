@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   width: 1200px;
-  margin: 0 100px;
+  margin: 50px 100px;
 `;
 
 export const CommentWriteWrapper = styled.div`
@@ -95,4 +95,5 @@ export const RegisterBtn = styled.button`
   color: white;
   padding: 14px 16px;
   border: none;
+  cursor: pointer;
 `;
