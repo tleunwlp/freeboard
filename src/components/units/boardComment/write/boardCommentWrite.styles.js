@@ -49,6 +49,12 @@ export const InfoInput = styled.input`
   margin-right: 20px;
 `;
 
+export const StarBtn = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: white;
+`;
+
 export const StarImg = styled.img`
   width: 24px;
   height: 24px;

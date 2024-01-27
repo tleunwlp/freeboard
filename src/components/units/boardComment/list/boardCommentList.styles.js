@@ -10,6 +10,8 @@ export const ItemWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: start;
+  border-bottom: 1px solid #bdbdbd;
+  padding: 15px 0px;
 `;
 
 export const ImageWrapper = styled.div`

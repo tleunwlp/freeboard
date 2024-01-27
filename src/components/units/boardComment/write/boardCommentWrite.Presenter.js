@@ -20,7 +20,21 @@ export default function BoardCommentWriteUI(props) {
             placeholder="비밀번호"
             onChange={props.onChangePassword}
           />
-          <S.StarImg src="/images/star.png" />
+          <S.StarBtn onClick={props.onClickStar1}>
+            <S.StarImg src="/images/star.png" />
+          </S.StarBtn>
+          <S.StarBtn onClick={props.onClickStar2}>
+            <S.StarImg src="/images/star.png" />
+          </S.StarBtn>
+          <S.StarBtn onClick={props.onClickStar3}>
+            <S.StarImg src="/images/star.png" />
+          </S.StarBtn>
+          <S.StarBtn onClick={props.onClickStar4}>
+            <S.StarImg src="/images/star.png" />
+          </S.StarBtn>
+          <S.StarBtn onClick={props.onClickStar5}>
+            <S.StarImg src="/images/star.png" />
+          </S.StarBtn>
         </S.InfoWrapper>
         <S.WriteInputWrapper>
           <S.WriteTxt
