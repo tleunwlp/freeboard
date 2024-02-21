@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { IResisterBtnProps } from "./BoardWrite.types";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -144,7 +145,8 @@ export const ButtonWrapper = styled.div`
 export const RegButton = styled.button`
   width: 179px;
   height: 52px;
-  background-color: ${(props) => (props.isActive ? "#ffd600" : "")};
+  background-color: ${(props: IResisterBtnProps) =>
+    props.isActive ? "#ffd600" : ""};
   border: none;
   font-weight: 500;
   font-size: 16px;

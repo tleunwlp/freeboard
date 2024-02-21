@@ -1,7 +1,8 @@
 import * as S from "./boardCommentList.styles";
-import { getDate } from "../../../../components/commons/libraries/utils";
+import { getDate } from "../../../commons/libraries/utils";
+import { IBoardCommentListUIProps } from "./boardCommentList.types";
 
-export default function BoardCommentListUI(props) {
+export default function BoardCommentListUI(props: IBoardCommentListUIProps) {
   return (
     <S.Wrapper>
       {props.data?.fetchBoardComments.map((el) => (
@@ -12,6 +13,10 @@ export default function BoardCommentListUI(props) {
           <S.CommentWrapper>
             <S.Column1Wrapper>
               <S.WriterTxt>{el.writer}</S.WriterTxt>
+              <S.Img src="/images/star.png" />
+              <S.Img src="/images/star.png" />
+              <S.Img src="/images/star.png" />
+              <S.Img src="/images/star.png" />
               <S.Img src="/images/star.png" />
             </S.Column1Wrapper>
             <S.Column2Wrapper>{el.contents}</S.Column2Wrapper>

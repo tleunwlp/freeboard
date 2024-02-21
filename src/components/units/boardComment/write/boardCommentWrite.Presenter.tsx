@@ -1,7 +1,8 @@
 import * as S from "./boardCommentWrite.styles";
 import { Fragment } from "react";
+import { IBoardCommentWriteUIProps } from "./boardCommentWrite.types";
 
-export default function BoardCommentWriteUI(props) {
+export default function BoardCommentWriteUI(props: IBoardCommentWriteUIProps) {
   return (
     <S.Wrapper>
       <S.CommentWriteWrapper>
