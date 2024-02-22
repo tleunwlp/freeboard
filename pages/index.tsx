@@ -16,9 +16,6 @@ import {
   Youtube,
   ImageWrapper,
   ImageUpload,
-  MainSet,
-  MainSetFlex,
-  MainSetInput,
   RegButton,
 } from "../styles/emotion";
 
@@ -65,19 +62,6 @@ export default function ResisterPage() {
         <ImageUpload>+</ImageUpload>
         <ImageUpload>+</ImageUpload>
       </ImageWrapper>
-      <MainSet>
-        <Label>메인 설정</Label>
-        <MainSetFlex>
-          <MainSetFlex>
-            <MainSetInput type="checkbox" id="main" />
-            <label>유튜브</label>
-          </MainSetFlex>
-          <MainSetFlex>
-            <MainSetInput type="checkbox" id="main" />
-            <label>사진</label>
-          </MainSetFlex>
-        </MainSetFlex>
-      </MainSet>
       <RegButton>등록하기</RegButton>
     </Wrapper>
   );
