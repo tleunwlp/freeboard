@@ -82,6 +82,10 @@ export const CategoryInfoTxt = styled.span`
   font-size: 16px;
   font-weight: 400;
   color: #4f4f4f;
+  cursor: pointer;
+  :hover {
+    color: blue;
+  }
 `;
 
 export const Footer = styled.div`

@@ -21,19 +21,19 @@ export default function BoardCommentWriteUI(props: IBoardCommentWriteUIProps) {
             placeholder="비밀번호"
             onChange={props.onChangePassword}
           />
-          <S.StarBtn onClick={props.onClickStar1}>
+          <S.StarBtn>
             <S.StarImg src="/images/star.png" />
           </S.StarBtn>
-          <S.StarBtn onClick={props.onClickStar2}>
+          <S.StarBtn>
             <S.StarImg src="/images/star.png" />
           </S.StarBtn>
-          <S.StarBtn onClick={props.onClickStar3}>
+          <S.StarBtn>
             <S.StarImg src="/images/star.png" />
           </S.StarBtn>
-          <S.StarBtn onClick={props.onClickStar4}>
+          <S.StarBtn>
             <S.StarImg src="/images/star.png" />
           </S.StarBtn>
-          <S.StarBtn onClick={props.onClickStar5}>
+          <S.StarBtn>
             <S.StarImg src="/images/star.png" />
           </S.StarBtn>
         </S.InfoWrapper>

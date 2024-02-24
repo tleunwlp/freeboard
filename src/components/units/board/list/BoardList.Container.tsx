@@ -21,8 +21,8 @@ export default function BoardList() {
     router.push(`/boards/new`);
   };
 
-  const onClickMoveToDetail = (event: MouseEvent<HTMLDivElement>) => {
-    if (event.target instanceof HTMLDivElement)
+  const onClickMoveToDetail = (event: MouseEvent<HTMLSpanElement>) => {
+    if (event.target instanceof HTMLSpanElement)
       router.push(`/boards/new-moved/${event.target.id}`);
   };
 

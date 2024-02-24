@@ -27,7 +27,11 @@ export default function BoardCommentListUI(props: IBoardCommentListUIProps) {
               <S.Img src="/images/pencil.png" />
             </S.IconBtn>
             <S.IconBtn>
-              <S.Img src="/images/cancel.png" />
+              <S.Img
+                id={el._id}
+                src="/images/cancel.png"
+                onClick={props.onClickDelete}
+              />
             </S.IconBtn>
           </S.IconWrapper>
         </S.ItemWrapper>
